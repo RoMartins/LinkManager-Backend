@@ -1,9 +1,14 @@
 const express = require('express')
+
+const db = require('./models')
+
 const authController = require("./controllers/auth")
 const app = express();
 
 app.use('/auth', authController)
 
-app.listen(3333 , () => {
-    console.log('Listening on port 3001')
+db.sequelize.sync().then(() => {
+    app.listen(3306 , () => {
+        console.log('Listening on port 3001')
+    });
 });
