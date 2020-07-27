@@ -7,14 +7,16 @@ const SaltRounds = 10;
 
 router.get('/sign-in', async (req, res) => {
     
-    const email = 'rodrigomartins@hotmail.com'
-    const password = '123456'
+    const {email , password} = req.body;
 
-    const hashPassword = hashSync(password, 10)
-
-    const results = await Account.create({email , password: hashPassword})
+    const EmailExists = await Account.findOne({where : {email}});
     
-    return res.json(results)
+    if(EmailExists) return res.json('Account already exists');
+    
+    const hashPassword = hashSync(password, 10)
+    const NewAccount = await Account.create({email , password: hashPassword})
+    
+    return res.json(NewAccount)
 }) 
 
 module.exports = router
