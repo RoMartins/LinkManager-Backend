@@ -1,11 +1,12 @@
 const express = require('express')
+const response = require('./middlewares/response')
 
 const db = require('./models')
-
 const authController = require("./controllers/auth")
+
 const app = express();
 
-
+app.use(response);
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
