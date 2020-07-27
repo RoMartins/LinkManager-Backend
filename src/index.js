@@ -8,7 +8,7 @@ const app = express();
 app.use('/auth', authController)
 
 db.sequelize.sync().then(() => {
-    app.listen(3306 , () => {
+    app.listen(3003 , () => {
         console.log('Listening on port 3001')
     });
 });
