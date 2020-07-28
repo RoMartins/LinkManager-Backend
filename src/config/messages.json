@@ -1,5 +1,14 @@
 
-{   "account.signup.success": " Cadastro criado com sucesso",
+{  
+    "account.signIn.success": " Login efetuado com sucesso",
+    "account.signIn.invalid" : "Credenciais inválidas",
+    "account.signIn.password_confirmation.any.required" : "Confirmação de senha é obrigatório",
+    "account.signIn.email.string.email": "Email inválido",
+    "account.signIn.password.string.empty" : "Senha obrigatória",
+    "account.signIn.email.string.empty": "Email obrigatório",
+    "account.signIn.password.string.pattern.base" : "A senha deve conter no mínimo 3 caracteres",
+    
+    "account.signup.success": " Cadastro criado com sucesso",
     "account.signup.email_exists" : "Email já cadastrado",
     "account.signup.password_confirmation.any.required" : "Confirmação de senha é obrigatório",
     "account.signup.email.string.email": "Email inválido",

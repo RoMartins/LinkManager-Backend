@@ -28,7 +28,7 @@ const jsonBadRequest= function(data, message, metadata) {
 
 const jsonUnauthorized = function(data, message, metadata) {
 
-    message = (message) ? message : 'Unauthorized request';
+    message = (message) ? message :  getMessage('response.Unauthorized_request');
     metadata = (metadata) ? metadata : {} ;
 
     this.status(STATUS_CODE_UNAUTHORIZED)
@@ -38,7 +38,7 @@ const jsonUnauthorized = function(data, message, metadata) {
 
 const jsonNotFound = function(data, message, metadata) {
 
-    message = (message) ? message : 'Not Found ';
+    message = (message) ? message : getMessage('response.Not_Found');
     metadata = (metadata) ? metadata : {} ;
 
     this.status(STATUS_CODE_NOT_FOUND)
