@@ -9,6 +9,9 @@ const {accountSignUp} = require('../validators/account')
 const {getMessage} = require('../helpers/messages')
 
 
+router.get('/sign-in', (req, res) =>{
+  return res.jsonOK(null)
+})
 router.post('/sign-up', accountSignUp ,async (req, res) => {
     
     const {email , password} = req.body;
@@ -21,7 +24,7 @@ router.post('/sign-up', accountSignUp ,async (req, res) => {
     const hashPassword = hashSync(password, 10)
     const NewAccount = await Account.create({email , password: hashPassword})
     
-    return res.jsonOK(NewAccount, getMessage('account.signup.success'))
+    return res.jsonOK(NewAccount,  getMessage('account.signup.success'))
 }) 
 
 module.exports = router

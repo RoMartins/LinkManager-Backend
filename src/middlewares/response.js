@@ -1,3 +1,4 @@
+const {getMessage} = require('../helpers/messages')
 const TYPE_JSON = 'application/json'
 const STATUS_CODE_OK = 200
 const STATUS_CODE_BAD_REQUEST = 400
@@ -7,7 +8,7 @@ const STATUS_CODE_SERVER_ERROR = 500
 
 const jsonOK = function(data, message, metadata) {
 
-    message = (message) ? message : 'Successful request';
+    message = (message) ? message : getMessage('response.json_ok');
     metadata = (metadata) ? metadata : {} ;
 
     this.status(STATUS_CODE_OK)
@@ -17,7 +18,7 @@ const jsonOK = function(data, message, metadata) {
 
 const jsonBadRequest= function(data, message, metadata) {
 
-    message = (message) ? message : 'Bad request';
+    message = (message) ? message : getMessage('response.bad_request')
     metadata = (metadata) ? metadata : {} ;
 
     this.status(STATUS_CODE_BAD_REQUEST)

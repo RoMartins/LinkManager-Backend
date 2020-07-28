@@ -1,5 +1,5 @@
 
-{   "account.signup.success": " Conta criada com sucesso",
+{   "account.signup.success": " Cadastro criado com sucesso",
     "account.signup.email_exists" : "Email já cadastrado",
     "account.signup.password_confirmation.any.required" : "Confirmação de senha é obrigatório",
     "account.signup.email.string.email": "Email inválido",
@@ -7,7 +7,14 @@
     "account.signup.password.string.empty" : "Senha obrigatória",
     "account.signup.email.string.empty": "Email obrigatório",
     "account.signup.password.string.pattern.base" : "A senha deve conter no mínimo 3 caracteres",
-    "account.signup.password_confirmation.string.empty" : "Confirmação de senha obrigatória"
+    "account.signup.password_confirmation.string.empty" : "Confirmação de senha obrigatória",
+    "response.bad_request" : "Requisição inválida",
+    "response.json_ok" : "Requisição efetuada com sucesso",
+    "response.Not_Found" : "Requisição não encontrada",
+    "response.Unauthorized_request" : "Requisição não autorizada"
+    
+
+
 
 
 }

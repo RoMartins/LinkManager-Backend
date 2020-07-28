@@ -18,7 +18,7 @@ const accountSignUp = (req, res, next) => {
     if(error) {
         const errorMessage = getValidatorError(error, "account.signup");
 
-        return res.jsonBadRequest(null , null, {error : errorMessage})
+        return res.jsonBadRequest(null ,null , {error : errorMessage})
     }
 
     next();
