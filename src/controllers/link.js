@@ -5,7 +5,7 @@ const router = express.Router();
 const {Link} = require('../models')
 
 router.get('/' , async (req, res)=> {
-    const accountId = 1
+    const {accountId} = req
 
     let links = await Link.findAll({where : {accountId}})
     if(!links) return res.jsonNotFound();
@@ -15,7 +15,7 @@ router.get('/' , async (req, res)=> {
 
 router.get('/:id' , async (req, res)=> {
     const {id} = req.params
-    const accountId = 1
+    const {accountId} = req
 
     let link = await Link.findOne({where : {id, accountId}})
     if(!link) return res.jsonNotFound();
@@ -27,7 +27,7 @@ router.post('/' , async (req, res)=> {
 
     const {label, url, image, isSocial} = req.body;
 
-    const accountId = 1
+    const {accountId} = req
 
     const link = await  Link.create({
         label,
@@ -43,7 +43,7 @@ router.post('/' , async (req, res)=> {
 router.put('/:id' , async (req, res) => {
     const {id} = req.params
     
-    const accountId = 1
+    const {accountId} = req
     const fields = ['label' , 'url', 'isSocial', 'image']
 
     let link = await Link.findOne({where : {id, accountId}})
@@ -62,7 +62,7 @@ router.put('/:id' , async (req, res) => {
 
 router.delete('/:id',  async (req, res) => {
     const {id} = req.params
-    const accountId = 1
+    const {accountId} = req
 
     let link = await Link.findOne({where : {id, accountId}})
     if(!link) return res.jsonNotFound();

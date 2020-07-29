@@ -18,7 +18,7 @@ router.post('/sign-in', accountSignIn, async (req, res) =>{
     if(!match) return res.jsonBadRequest(null, getMessage('account.signIn.invalid'))
     
     const token = generateJwt({id : account.id })
-    const Refreshtoken = generateRefreshJwt({id :account.id})
+    const Refreshtoken = generateRefreshJwt({id :account.id, version : account.jwtVersion })
 
     return res.jsonOK(account, getMessage('account.signIn.success'), {token, Refreshtoken})
 })
@@ -35,7 +35,7 @@ router.post('/sign-up', accountSignUp ,async (req, res) => {
     const NewAccount = await Account.create({email , password: hashPassword})
 
     const token = generateJwt({id : NewAccount.id })
-    const Refreshtoken = generateRefreshJwt({id : NewAccount.id})
+    const Refreshtoken = generateRefreshJwt({id : NewAccount.id,  version : NewAccount.jwtVersion})
 
     return res.jsonOK(NewAccount,  getMessage('account.signup.success'), {token, Refreshtoken})
 }) 
