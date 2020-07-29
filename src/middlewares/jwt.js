@@ -3,7 +3,7 @@ const {verifyJwt} = require('../helpers/jwt')
 const checkJwt = (req, res, next) => {
 
     const {url} = req
-    const excludeUrl = ['/auth/sign-in' , '/auth/sign-up']
+    const excludeUrl = ['/auth/sign-in' , '/auth/sign-up' , '/auth/refresh']
     const isExclude = !!excludeUrl.find(path => path.startsWith(url))
     if(isExclude) return next();
 
