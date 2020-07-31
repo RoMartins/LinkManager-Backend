@@ -23,16 +23,16 @@ router.get('/:id' , async (req, res)=> {
     return res.jsonOK(link)
 })
 
+
 router.post('/' , async (req, res)=> {
 
-    const {label, url, image, isSocial} = req.body;
+    const {label, url, isSocial} = req.body;
 
     const {accountId} = req
 
     const link = await  Link.create({
         label,
         isSocial,
-        image,
         url,
         accountId
     })
