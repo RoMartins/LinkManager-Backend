@@ -16,7 +16,7 @@ const jsonOK = function(data, message, metadata) {
     return this.json ({message, data , metadata, status : STATUS_CODE_OK})
 }
 
-const jsonBadRequest= function(data, message, metadata) {
+const jsonBadRequest = function(data, message, metadata) {
 
     message = (message) ? message : getMessage('response.bad_request')
     metadata = (metadata) ? metadata : {} ;
